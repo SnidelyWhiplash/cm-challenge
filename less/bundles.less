@@ -1,0 +1,135 @@
+/**
+ * Section.
+ */
+section.bundles {
+  margin-bottom: 50px;
+}
+
+/**
+ * List.
+ */
+ul.bundles {
+  text-align: center;
+  list-style: none;
+  margin: 0 -(@gutterSize/2);
+  padding: 0;
+
+  > li {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0;
+    padding: 0 (@gutterSize/2);
+    width: 20%;
+  }
+}
+
+/**
+ * Item.
+ */
+.bundle {
+  text-align: center;
+  background: #fff;
+  padding: 5px;
+  cursor: pointer;
+
+  .border-radius(5px);
+  .box-shadow(0 1px 2px rgba(0, 0, 0, 0.25));
+  .transition(all 0.1s ease-in-out 0.1s);
+
+  &:hover {
+    margin-top: -10px;
+  }
+
+  .inner {
+    position: relative;
+    border: 2px solid @mutedColor;
+    overflow: hidden;
+
+    .border-radius(3px);
+  }
+
+  .amounts {
+    padding: 35px 15px 30px;
+
+    .price {
+      font-size: 2.5em;
+      font-weight: 700;
+      margin-bottom: 5px;
+      color: #4f4d4a;
+    }
+
+    .bonus {
+      font-size: 1.05em;
+      color: #4f4d4a;
+    }
+  }
+
+  .info {
+    padding: 12px 15px;
+    border-top: 1px solid @mutedColor;
+
+    .title {
+      font-size: 0.95em;
+      line-height: 1;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    button {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  &.has-bonus {
+    .bonus {
+      color: darken(@highlightColor, 10%);
+    }
+  }
+
+  &.selected {
+    margin-top: 0;
+
+    .box-shadow(0 1px 5px lighten(@highlightColor, 5%));
+
+    .inner {
+      border-color: @highlightColor;
+
+      &:before,
+      &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+
+      &:before {
+        width: 54px;
+        height: 54px;
+        top: -27px;
+        right: -27px;
+        background: @highlightColor;
+
+        .transform(rotate(45deg));
+      }
+
+      &:after {
+        width: 13px;
+        height: 15px;
+        top: 4px;
+        right: 4px;
+        background: url('../img/check.png');
+
+        .img-2x('../img/check.png');
+      }
+    }
+
+    .info {
+      border-color: lighten(@highlightColor, 20%);
+    }
+
+    .title {
+      font-weight: 500;
+    }
+  }
+}

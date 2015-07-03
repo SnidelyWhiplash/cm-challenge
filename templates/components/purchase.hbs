@@ -1,0 +1,60 @@
+<h1>Complete Purchase</h1>
+
+<hr>
+
+<form>
+  <div class="fields">
+    <div class="radios">
+      <label>Payment Method:</label>
+
+      <input id="cc" type="radio" name="payment_method" value="cc" {{#if methodIsCC}}checked{{/if}}>
+      <label for="cc" class="cc radio">
+        <span class="icon"></span>
+        Credit Card
+      </label>
+
+      <input id="pp" type="radio" name="payment_method" value="pp" {{#unless methodIsCC}}checked{{/unless}}>
+      <label for="pp" class="pp radio">
+        <span class="icon"></span>
+        PayPal
+      </label>
+    </div>
+
+    <div class="details">
+      <div class="preview {{method}}">
+        <div class="stripe clearfix">
+          <span class="logo"></span>
+          <span class="secure"></span>
+          <span class="price">${{price}}</span>
+        </div>
+
+        {{#if methodIsCC}}
+          <div class="info">
+            <div class="number clearfix">
+              <input type="text" size="4" value="****" disabled>
+              <input type="text" size="4" value="****" disabled>
+              <input type="text" size="4" value="****" disabled>
+              <button disabled>6464 <span class="caret"></span></button>
+            </div>
+
+            <div class="security clearfix">
+              <div class="exp">
+                <label for="exp">Exp.</label>
+                <input id="exp" type="text" size="5" value="07/15" disabled>
+              </div>
+
+              <div class="cvv">
+                <label for="cvv">CVV</label>
+                <input id="cvv" type="text" size="3" value="XXX" disabled>
+              </div>
+            </div>
+          </div>
+        {{/if}}
+      </div>
+    </div>
+  </div>
+
+  <div class="buttons">
+    <button class="primary">Buy Credits</button>
+  </div>
+</form>

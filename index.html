@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Stock up on Credits - CM Code Challenge</title>
+    <meta name="description" content="CM Code Challenge">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+
+  <body>
+    <header class="container">
+      <h1>Stock up on Credits</h1>
+      <h2>Save money and get free bonus credits when you buy in bulk</h2>
+    </header>
+
+    <main class="container">
+      <section class="bundles"></section>
+      <section class="purchase"></section>
+    </main>
+
+    <!-- Include deps. -->
+    <script src="libs/require.js"></script>
+    <script src="js/require.config.js"></script>
+
+    <!-- Load and start the CM app. -->
+    <script>
+      require(['cm'], function (app) {
+        app.start();
+      });
+    </script>
+  </body>
+</html>

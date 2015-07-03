@@ -1,0 +1,174 @@
+/**
+ * Base styling.
+ */
+* {
+  .box-sizing();
+}
+
+body {
+  margin: 0;
+  padding: 5% 0;
+  background: #f1efec url('../img/texture.jpg');
+  font: @baseFont;
+  color: #5d5953;
+}
+
+/**
+ * Typography.
+ */
+h1, h2, h3, h4, h5, h6 {
+  font-family: @prominentFont;
+  font-weight: 300;
+  margin-bottom: 0.5em;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+h3 {
+  font-size: 1.3em;
+}
+
+h4 {
+  font-size: 1.15em;
+}
+
+h5 {
+  font-size: 1.15em;
+}
+
+h6 {
+  font-size: 1em;
+}
+
+hr {
+  margin: 0 0 (@gutterSize * 2) 0;
+  border: none;
+  border-top: 1px solid rgba(43, 41, 39, 0.1);
+}
+
+/**
+ * Scaffolding.
+ */
+.container {
+  width: @containerWidth;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+/**
+ * Header.
+ */
+header {
+  text-align: center;
+  margin-bottom: 50px;
+
+  > h1 {
+    font-size: 4.2em;
+    font-weight: 100;
+    color: #615b50;
+    margin-bottom: 0.1em;
+  }
+
+  > h2 {
+    font-size: 1.75em;
+    font-weight: 200;
+    color: #afaba7;
+  }
+}
+
+/**
+ * Form elements.
+ */
+label {
+  cursor: pointer;
+}
+
+input {
+  font-family: @prominentFont;
+  font-size: 1em;
+
+  &[type="radio"] {
+    display: none;
+
+    + label {
+      position: relative;
+      padding-left: 20px;
+
+      &:before {
+        content: '';
+        display: block;
+        width: 13px;
+        height: 13px;
+        background: #fff;
+        position: absolute;
+        left: 0;
+
+        .border-radius(50%);
+        .box-shadow(~"0 1px 1px rgba(0, 0, 0, 0.25), 0 -1px 1px rgba(0, 0, 0, 0.15)");
+      }
+    }
+
+    &:checked + label:before {
+      content: '\2022';
+      color: @highlightColor;
+      font-size: 34px;
+      text-align: center;
+      line-height: 13px;
+    }
+  }
+}
+
+button {
+  font-family: @prominentFont;
+  font-size: 1.2em;
+  font-weight: normal;
+  letter-spacing: 1px;
+  background: #d1ccc1;
+  color: #fff;
+  padding: 12px 15px 15px 15px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  text-shadow: 0 -1px rgba(0, 0, 0, 0.21);
+
+  .gradient-image('../img/texture-transparent.png', #d0ccc1, #c3bdaf);
+  .border-radius(3px);
+  .box-shadow(~"0 1px 1px rgba(0, 0, 0, 0.15), 0 -3px 0 rgba(0, 0, 0, 0.1) inset");
+
+  &:hover {
+    .gradient-image('../img/texture-transparent.png', #d0ccc1, #d0ccc1);
+  }
+
+  &:active {
+    .gradient-image('../img/texture-transparent.png', #c3bdaf, #c3bdaf);
+    .box-shadow(0 1px 1px rgba(0, 0, 0, 0.15));
+  }
+
+  &.primary {
+    .gradient-image('../img/texture-transparent.png', #8fa95b, #80994c);
+
+    &:hover {
+      .gradient-image('../img/texture-transparent.png', #8fa95b, #8fa95b);
+    }
+
+    &:active {
+      .gradient-image('../img/texture-transparent.png', #80994c, #80994c);
+    }
+  }
+}

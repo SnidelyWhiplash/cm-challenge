@@ -1,0 +1,26 @@
+<article class="bundle {{#if bonus}}has-bonus{{/if}} {{#if selected}}selected{{/if}}">
+  <div class="inner">
+    <div class="amounts">
+      <h1 class="price">
+        ${{price}}
+      </h1>
+
+      <h2 class="bonus">
+        {{#if bonus}}
+          + ${{bonus}} Bonus
+        {{else}}
+          No Bonus
+        {{/if}}
+      </h2>
+    </div>
+
+    <div class="info">
+      <strong class="title">{{title}}</strong>
+      {{#if selected}}
+        <button class="primary">Selected</button>
+      {{else}}
+        <button>Select</button>
+      {{/if}}
+    </div>
+  </div>
+</article>

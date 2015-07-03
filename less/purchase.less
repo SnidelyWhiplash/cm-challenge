@@ -1,0 +1,208 @@
+/**
+ * Purchase component.
+ */
+.purchase {
+  text-align: center;
+
+  h1 {
+    font-size: 1.2em;
+    letter-spacing: 1px;
+  }
+
+  .fields {
+    margin-bottom: @gutterSize;
+
+    .radios {
+      font-size: 0.85em;
+      margin-bottom: (@gutterSize * 2);
+
+      label {
+        display: inline-block;
+        margin-right: 5px;
+
+        &.radio {
+          margin-right: 20px;
+
+          &:before {
+            top: 2px;
+          }
+
+          &:last-child {
+            margin-right: 0;
+          }
+
+          .icon {
+            width: 30px;
+            height: 19px;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 3px;
+            position: relative;
+            top: -1px;
+          }
+
+          &.cc .icon {
+            background-image: url('../img/cc.png');
+
+            .img-2x('../img/cc@2x.png');
+          }
+
+          &.pp .icon {
+            background-image: url('../img/pp.png');
+
+            .img-2x('../img/pp@2x.png');
+          }
+        }
+      }
+    }
+  }
+
+  // CC/PP card preview.
+  .preview {
+    position: relative;
+    width: 200px;
+    height: 130px;
+    padding: 10px;
+    margin: auto;
+    font-size: 0.85em;
+    background: #fff url('../img/wave.png') center center;
+    border: 1px solid darken(@mutedColor, 8%);
+
+    .border-radius(4px);
+
+    label {
+      color: rgba(129, 126, 121, 0.58);
+      display: inline;
+      cursor: auto;
+    }
+
+    input {
+      background: none;
+      border: none;
+      display: inline;
+    }
+
+    .stripe {
+      text-align: left;
+      background: rgba(240, 240, 241, 0.6);
+      padding: 7px 10px;
+      margin: 0 -10px 15px;
+
+      .logo {
+        width: 37px;
+        height: 12px;
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 8px;
+        background: url('../img/visa.png');
+
+        .img-2x('../img/visa@2x.png');
+      }
+
+      .secure {
+        width: 11px;
+        height: 13px;
+        display: inline-block;
+        vertical-align: middle;
+        background: url('../img/lock.png');
+
+        .img-2x('../img/lock@2x.png');
+      }
+
+      .price {
+        float: right;
+        font-size: 0.9rem;
+        font-weight: bold;
+      }
+    }
+
+    .number {
+      margin-bottom: 20px;
+
+      input {
+        float: left;
+        margin: 6px 3px 0 0;
+        font-size: 0.85rem;
+
+        &:last-of-type {
+          margin-right: 0;
+        }
+      }
+
+      button {
+        float: right;
+        padding: 6px 7px;
+        font-size: 1em;
+        font-weight: 100;
+
+        .box-shadow(none);
+
+        .caret {
+          width: 10px;
+          height: 6px;
+          display: inline-block;
+          vertical-align: middle;
+          background: url('../img/caret-down.png');
+
+          .img-2x('../img/caret-down@2x.png');
+        }
+      }
+    }
+
+    .security {
+      .exp {
+        float: left;
+      }
+
+      .cvv {
+        float: right;
+      }
+    }
+
+    // Paypal-specific.
+    &.pp {
+      .logo {
+        width: 46px;
+        margin-right: 4px;
+        background-image: url('../img/paypal.png');
+
+        .img-2x('../img/paypal@2x.png');
+      }
+
+      &:before,
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        height: 30px;
+        bottom: 10px;
+      }
+
+      &:before {
+        width: 65%;
+        left: 0;
+        background: #134579;
+
+        .border-radius(0 3px 3px 0);
+      }
+
+      &:after {
+        width: 30%;
+        right: 0;
+        background: #0c78be;
+
+        .border-radius(3px 0 0 3px);
+      }
+    }
+  }
+
+  .buttons {
+    width: 200px;
+    margin: auto;
+
+    button {
+      display: block;
+      width: 100%;
+    }
+  }
+}
