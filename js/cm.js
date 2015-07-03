@@ -3,6 +3,7 @@ define(function (require) {
     , Bundles = require('collections/bundles')
     , BundleListView = require('views/bundles/list')
     , PurchaseView = require('views/components/purchase')
+    , Payment = require('models/payment')
     ;
 
   // Respond to app start.
@@ -21,7 +22,9 @@ define(function (require) {
     $('.bundles').html(bundleListView.render().$el);
 
     // Show the purchase view.
-    var purchaseView = new PurchaseView();
+    var purchaseView = new PurchaseView({
+      model: new Payment(app.conf.payment)
+    });
     $('.purchase').html(purchaseView.render().$el);
   });
 

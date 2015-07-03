@@ -1,7 +1,10 @@
 define(function (require) {
   // App config.
   return {
+    // Default bundle.
     defaultBundle: 'most_popular',
+
+    // Bundles.
     bundles: [
       {
         name: 'individual',
@@ -31,6 +34,19 @@ define(function (require) {
         price: 500,
         bonus: 60
       }
-    ]
+    ],
+
+    // Payment method (would come from API in real world).
+    payment: {
+      method: 'credit',
+      numbers: [
+        '****',
+        '****',
+        '****',
+        '6464'
+      ],
+      exp: '07/15',
+      cvv: 'xxx'
+    }
   };
 });

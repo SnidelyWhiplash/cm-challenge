@@ -7,14 +7,14 @@
     <div class="radios">
       <label>Payment Method:</label>
 
-      <input id="cc" type="radio" name="payment_method" value="cc" {{#if methodIsCC}}checked{{/if}}>
-      <label for="cc" class="cc radio">
+      <input id="credit" type="radio" name="method" value="credit" {{#if methodIsCredit}}checked{{/if}}>
+      <label for="credit" class="radio">
         <span class="icon"></span>
         Credit Card
       </label>
 
-      <input id="pp" type="radio" name="payment_method" value="pp" {{#unless methodIsCC}}checked{{/unless}}>
-      <label for="pp" class="pp radio">
+      <input id="paypal" type="radio" name="method" value="paypal" {{#unless methodIsCredit}}checked{{/unless}}>
+      <label for="paypal" class="radio">
         <span class="icon"></span>
         PayPal
       </label>
@@ -28,24 +28,24 @@
           <span class="price">${{price}}</span>
         </div>
 
-        {{#if methodIsCC}}
+        {{#if methodIsCredit}}
           <div class="info">
             <div class="number clearfix">
-              <input type="text" size="4" value="****" disabled>
-              <input type="text" size="4" value="****" disabled>
-              <input type="text" size="4" value="****" disabled>
-              <button disabled>6464 <span class="caret"></span></button>
+              <input type="text" size="4" value="{{numbers.[0]}}" disabled>
+              <input type="text" size="4" value="{{numbers.[1]}}" disabled>
+              <input type="text" size="4" value="{{numbers.[2]}}" disabled>
+              <button disabled>{{numbers.[3]}} <span class="caret"></span></button>
             </div>
 
             <div class="security clearfix">
               <div class="exp">
                 <label for="exp">Exp.</label>
-                <input id="exp" type="text" size="5" value="07/15" disabled>
+                <input id="exp" type="text" size="5" value="{{exp}}" disabled>
               </div>
 
               <div class="cvv">
                 <label for="cvv">CVV</label>
-                <input id="cvv" type="text" size="3" value="XXX" disabled>
+                <input id="cvv" type="text" size="3" value="{{cvv}}" disabled>
               </div>
             </div>
           </div>

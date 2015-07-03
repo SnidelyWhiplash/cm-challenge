@@ -41,13 +41,13 @@
             top: -1px;
           }
 
-          &.cc .icon {
+          &[for="credit"] .icon {
             background-image: url('../img/cc.png');
 
             .img-2x('../img/cc@2x.png');
           }
 
-          &.pp .icon {
+          &[for="paypal"] .icon {
             background-image: url('../img/pp.png');
 
             .img-2x('../img/pp@2x.png');
@@ -57,7 +57,7 @@
     }
   }
 
-  // CC/PP card preview.
+  // Credit/PayPal card preview.
   .preview {
     position: relative;
     width: 200px;
@@ -156,11 +156,15 @@
 
       .cvv {
         float: right;
+
+        input {
+          text-transform: uppercase;
+        }
       }
     }
 
     // Paypal-specific.
-    &.pp {
+    &.paypal {
       .logo {
         width: 46px;
         margin-right: 4px;
