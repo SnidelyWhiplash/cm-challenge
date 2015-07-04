@@ -1,0 +1,59 @@
+// Box sizing.
+.box-sizing(@args: border-box) {
+  -webkit-box-sizing: @args;
+  -moz-box-sizing: @args;
+  box-sizing: @args;
+}
+
+// Border radius.
+.border-radius(@args) {
+  -webkit-border-radius: @args;
+  border-radius: @args;
+
+  background-clip: padding-box;
+}
+
+// Box shadow.
+.box-shadow(@args) {
+  -webkit-box-shadow: @args;
+  box-shadow: @args;
+}
+
+// Gradients.
+.gradient-image(@url, @color1, @color2) {
+  background-color: @color1;
+  background: url(@url) repeat, -webkit-gradient(linear, left top, left bottom, color-stop(0%, @color1), color-stop(100% @color2));
+  background: url(@url) repeat, -webkit-linear-gradient(top, @color1 0%, @color2 100%);
+  background: url(@url) repeat, -moz-linear-gradient(top, @color1 0%, @color2 100%);
+  background: url(@url) repeat, -ms-linear-gradient(top, @color1 0%, @color2 100%);
+  background: url(@url) repeat, -o-linear-gradient(top, @color1 0%, @color2 100%);
+  background: url(@url) repeat, linear-gradient(top, @color1 0%, @color2 100%);
+}
+
+// Transitions.
+.transition(@args) {
+  -webkit-transition: @args;
+  -moz-transition: @args;
+  -o-transition: @args;
+  -ms-transition: @args;
+  transition: @args;
+}
+
+// Transform.
+.transform(@args) {
+  -webkit-transform: @args;
+  -moz-transform: @args;
+  -ms-transform: @args;
+  -o-transform: @args;
+  transform: @args;
+}
+
+// Retina image.
+.img-2x(@url) {
+  @media only screen and (min-device-pixel-ratio: 2),
+  only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (min--moz-device-pixel-ratio: 2) {
+    background-image: url(@url);
+    background-size: 100%;
+  }
+}
