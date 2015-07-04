@@ -113,9 +113,10 @@ input {
       &:before {
         content: '';
         display: block;
-        width: 13px;
-        height: 13px;
+        width: 8px;
+        height: 8px;
         background: #fff;
+        border: 2px solid #fff;
         position: absolute;
         left: 0;
 
@@ -125,11 +126,7 @@ input {
     }
 
     &:checked + label:before {
-      content: '\2022';
-      color: @highlightColor;
-      font-size: 34px;
-      text-align: center;
-      line-height: 13px;
+      background: @highlightColor;
     }
   }
 }
