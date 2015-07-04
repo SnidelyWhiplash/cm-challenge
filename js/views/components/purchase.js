@@ -17,7 +17,7 @@ define(function (require) {
       this.listenTo(this.model, 'change', this.render);
 
       // Re-render on bundle change.
-      this.listenTo(app.state, 'change:selectedBundle', this.render);
+      this.listenTo(app.state, 'change:bundle', this.render);
 
       Backbone.View.prototype.initialize.apply(this, arguments);
     },
@@ -25,10 +25,9 @@ define(function (require) {
     render: function () {
       // Build props.
       var props = _.extend({}, this.model.toJSON(), {
-            price: app.state.get('selectedBundle').get('price'),
-            methodIsCredit: (this.model.get('method') === 'credit')
-          })
-        ;
+        bundle: app.state.get('bundle').toJSON(),
+        methodIsCredit: (this.model.get('method') === 'credit')
+      });
 
       // Render template.
       this.$el.html(this.template(props));
@@ -44,8 +43,8 @@ define(function (require) {
       e.preventDefault();
 
       // Just alert with some bundle info on submit.
-      var selectedBundle = app.state.get('selectedBundle');
-      alert('Purchasing ' + selectedBundle.get('title') + ' for $' + selectedBundle.get('price'));
+      var bundle = app.state.get('bundle');
+      alert('Purchasing ' + bundle.get('title') + ' for $' + bundle.get('price') + ' via ' + this.model.get('method'));
     }
   });
 

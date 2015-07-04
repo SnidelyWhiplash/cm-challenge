@@ -10,7 +10,7 @@ define(function (require) {
 
     initialize: function () {
       // Re-render on bundle change.
-      this.listenTo(app.state, 'change:selectedBundle', this.render);
+      this.listenTo(app.state, 'change:bundle', this.render);
 
       Backbone.View.prototype.initialize.apply(this, arguments);
     },
@@ -27,7 +27,7 @@ define(function (require) {
       this.collection.each(function (bundle) {
         var bundleView = new ItemView({
           model: bundle,
-          selected: (bundle.get('name') === app.state.get('selectedBundle').get('name'))
+          selected: (bundle.get('name') === app.state.get('bundle').get('name'))
         });
 
         // Append the item view.

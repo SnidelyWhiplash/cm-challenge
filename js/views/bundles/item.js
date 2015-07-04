@@ -36,7 +36,7 @@ define(function (require) {
       e.preventDefault();
 
       // Update state with selected bundle.
-      app.state.set('selectedBundle', this.model);
+      app.state.set('bundle', this.model);
     }
   });
 

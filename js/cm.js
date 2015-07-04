@@ -13,7 +13,7 @@ define(function (require) {
       ;
 
     // Set default bundle.
-    app.state.set('selectedBundle', defaultBundle);
+    app.state.set('bundle', defaultBundle);
 
     // Show the bundles collection view.
     var bundleListView = new BundleListView({
